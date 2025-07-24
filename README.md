@@ -46,7 +46,7 @@ Corresponding CPGs use the same naming convention as `.dot` files.
 
 This dataset is derived from the original **ReVeal** dataset:
 
-> **Chakraborty et al.**, *"ReVeal: A Data-Driven Approach for In-Depth Vulnerability Detection"*,  
+> **Chakraborty et al.**, *"Deep Learning based Vulnerability Detection: Are We There Yet?"*,  
 > arXiv:2009.07235 — [https://arxiv.org/abs/2009.07235](https://arxiv.org/abs/2009.07235)
 
 We have curated and filtered ReVeal to extract functions from Chrome and Debian, generated corresponding Code Property Graphs (CPGs), and removed malformed or oversized graphs to support explainable GNN-based vulnerability detection.
@@ -100,12 +100,3 @@ If you use this dataset in your research or application, please cite the followi
   url          = {https://arxiv.org/abs/2507.16540}
 }
 
----
-
-## 📬 Contact
-
-For questions, suggestions, or collaborations, please contact:
-
-**Radowanul Haque**  
-PhD Researcher, Ulster University  
-📧 r.haque@ulster.ac.uk
