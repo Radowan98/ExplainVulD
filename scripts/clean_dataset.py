@@ -86,7 +86,7 @@ def copy_valid_graphs(input_folder, output_folder, max_nodes=500):
     print(f"[📝] Removed files logged to: {log_path}")
 
 if __name__ == "__main__":
-    input_dir = "cpgs/qemu"       # Your input folder
-    output_dir = "cpgs/c_qemu"    # Your output folder (cleaned graphs)
+    input_dir = "cpgs/chrome"       # Your input folder
+    output_dir = "cpgs/c_chrome"    # Your output folder (cleaned graphs)
 
     copy_valid_graphs(input_dir, output_dir, max_nodes=500)
