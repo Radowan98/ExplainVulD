@@ -86,8 +86,7 @@ Use this after unzipping `chrome_cpgs.zip` or `debian_cpgs.zip`.
 ---
 
 ## 📚 Citation
-
-If you use this dataset in your research or application, please cite the following:
+If you use the **processed Code Property Graphs (CPGs)** or the dataset split and filtering provided in this repository, please cite our ExplainVulD study:
 
 ```bibtex
 @misc{haque2025explainablevulnerabilitydetectioncc,
