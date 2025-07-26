@@ -99,3 +99,13 @@ If you use the **processed Code Property Graphs (CPGs)** or the dataset split an
   url          = {https://arxiv.org/abs/2507.16540}
 }
 
+
+
+## 🐳 Docker Support
+
+You can run ExplainVulD’s Code Property Graph (CPG) visualisation tool using Docker:
+
+```bash
+docker pull remyxai/2507.16540v1:latest
+docker run -it remyxai/2507.16540v1
+
