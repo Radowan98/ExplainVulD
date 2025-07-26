@@ -28,7 +28,7 @@ ExplainVulD-Dataset/
 │   └── dataset_description.md         # Field-level details and usage guide
 │
 ├── README.md                          # This file
-└── LICENSE                            # CC BY-NC 4.0 License
+└── LICENSE                            
 ```
 
 ---
