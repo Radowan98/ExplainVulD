@@ -109,3 +109,16 @@ You can run ExplainVulD’s Code Property Graph (CPG) visualisation tool using D
 docker pull remyxai/2507.16540v1:latest
 docker run -it remyxai/2507.16540v1
 ```
+This image contains:
+
+- All required dependencies (`Graphviz`, `pydot`)
+- The latest version of this repository
+- A sample script that demonstrates DOT-to-PDF conversion
+
+📦 Docker Hub: [remyxai/2507.16540v1](https://hub.docker.com/r/remyxai/2507.16540v1)  
+🤖 Contributed by [smellslikeml](https://github.com/smellslikeml)
+
+## 📄 License
+
+This repository is released under the MIT License.
+
