@@ -1,0 +1,49 @@
+# syntax=docker/dockerfile:1.4
+
+# The repository contains data processing scripts that are CPU-only.
+# Using a lightweight Python base image as per the "cpu-only" option.
+FROM python:3.10-alpine
+
+# Install system dependencies:
+# - git: to clone the repository
+# - unzip: to extract the dataset files
+# - graphviz: required by pydot and the dot_to_pdf.py script
+RUN apk add --no-cache git unzip graphviz
+
+WORKDIR /app
+
+# Clone the repository into the working directory
+RUN git clone --depth 1 https://github.com/Radowan98/ExplainVulD .
+
+# Install Python dependencies inferred from the scripts
+# - pydot, tqdm: used in scripts/clean_dataset.py
+RUN pip install --no-cache-dir pydot tqdm
+
+# Create an entrypoint script to run the data cleaning demo.
+# The `clean_dataset.py` script has hardcoded paths, so we
+# first set up the directory structure it expects.
+COPY --chmod=755 <<'ENTRYPOINT' /app/entrypoint.sh
+#!/bin/sh
+set -e
+
+echo "--- Setting up the demo environment ---"
+# The clean_dataset.py script expects data in cpgs/chrome
+echo "[1/2] Creating directory cpgs/chrome..."
+mkdir -p cpgs/chrome
+
+echo "[2/2] Unzipping chrome CPGs into cpgs/chrome..."
+unzip -q cpg_dot_files/chrome_cpgs.zip -d cpgs/chrome
+echo "--- Setup complete ---"
+echo ""
+
+echo "--- Running the dataset cleaning demo (scripts/clean_dataset.py) ---"
+# This script will process the .dot files from cpgs/chrome
+# and save the cleaned versions to cpgs/c_chrome
+python scripts/clean_dataset.py
+echo ""
+echo "--- Demo finished ---"
+echo "Cleaned graphs are available in the container at /app/cpgs/c_chrome"
+ENTRYPOINT
+
+# Run the entrypoint script to set up data and execute the cleaning process.
+ENTRYPOINT ["/app/entrypoint.sh"]
